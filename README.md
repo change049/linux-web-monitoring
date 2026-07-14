@@ -13,7 +13,7 @@ Zabbix を利用した監視環境を作成するプロジェクトです。
 - [x] 80番ポート確認
 - [x] UFW 設定確認
 - [x] HTTP 応答確認
-- [ ] Health Check Script
+- [x] Health Check Script
 - [ ] Log Analysis Script
 - [ ] cron 定期実行
 - [ ] Zabbix 連携
