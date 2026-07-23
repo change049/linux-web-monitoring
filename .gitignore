@@ -1,0 +1,14 @@
+# Backup
+backup/baseline/
+
+# Log
+logs/
+
+# Temporary files
+*.tmp
+
+# Vim
+*.swp
+
+# macOS
+.DS_Store
