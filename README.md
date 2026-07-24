@@ -83,3 +83,11 @@ linux-web-monitoring/
 ## Status
 
 Work in Progress
+## Incident Simulation
+
+1. [Port Conflict](incidents/incident-01-port-conflict/)
+2. [Nginx Syntax Error](incidents/incident-02-nginx-syntax-error/)
+3. [403 Forbidden](incidents/incident-03-403-forbidden/)
+4. [502 Bad Gateway](incidents/incident-04-502-bad-gateway/)
+5. [504 Gateway Time-out](incidents/incident-05-504-gateway-timeout/)
+6. [Disk Full](incidents/incident-06-disk-full/)
