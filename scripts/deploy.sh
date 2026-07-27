@@ -10,7 +10,7 @@ NEW_DIR="/var/www/myapp.new"
 OLD_DIR="/var/www/myapp.old"
 
 LOG_FILE="$PROJECT_DIR/logs/deploy.log"
-CHECK_URL="http://myapp.local"
+CHECK_URL="${CHECK_URL:-http://myapp.local}"
 
 mkdir -p "$(dirname "$LOG_FILE")"
 
