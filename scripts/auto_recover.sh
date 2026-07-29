@@ -27,7 +27,7 @@ CHECK_HTTP(){
 recover_nginx(){
 	log "Starting nginx recovering"
 
-	if ! nginx -t >>"$LOG_FILE"2>&1 ; then
+	if ! nginx -t >>"$LOG_FILE" 2>&1 ; then
 		log "ERROR:nginx configuration test failed"
 		return 1
 	fi

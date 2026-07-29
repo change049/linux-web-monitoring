@@ -19,22 +19,23 @@ log(){
 }
 
 rollback() {
-	log "starting rollback"
-	
-	if [[ -d "$OLD_DIR" ]];then
-	rm -rf "$TARGET_DIR"
-	mv "$OLD_DIR" "$TARGET_DIR"
+    log "Starting rollback."
 
-	if nginx -t >> "$LOG_FILE" 2>&1 ;then
-	systemctl reload nginx
-	log "Rollback completed."
-	else
-	log "ERROR: Nginx configuration test failed during rollback."
-            return 1
-	fi
-	log "ERROR:rollback directory does not exist."
-	return 1
-	fi	
+    if [[ ! -d "$OLD_DIR" ]]; then
+        log "ERROR: Rollback directory does not exist."
+        return 1
+    fi
+
+    rm -rf "$TARGET_DIR"
+    mv "$OLD_DIR" "$TARGET_DIR"
+
+    if ! systemctl reload nginx >>"$LOG_FILE" 2>&1; then
+        log "ERROR: Failed to reload nginx."
+        return 1
+    fi
+
+    log "Rollback completed."
+    return 0
 }
 
 if [[ "$EUID" -ne 0 ]];then
@@ -77,7 +78,11 @@ if ! nginx -t >> "$LOG_FILE" 2>&1;then
 	exit 1
 fi
 
-systemctl reload nginx
+if ! systemctl reload nginx >>"$LOG_FILE" 2>&1; then
+    log "ERROR: Failed to reload nginx."
+    rollback
+    exit 1
+fi
 
 sleep 2
 
@@ -87,7 +92,7 @@ if ! curl --fail --silent --show-error --max-time 5 "$CHECK_URL" > /dev/null ;th
 	exit 1
 fi
 
-log "HTTP verfication succeeded"
+log "HTTP verification succeeded"
 
 rm -rf "$OLD_DIR"
 log "depolyment completed successfully"

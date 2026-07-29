@@ -1,8 +1,15 @@
-# Backup
-backup/baseline/
+# Backup archives
+backup/*.tar.gz
+backup/*.sha256
 
-# Log
+# Logs
 logs/
+
+# Generated reports
+reports/
+
+# Lab files
+lab/
 
 # Temporary files
 *.tmp
@@ -12,3 +19,7 @@ logs/
 
 # macOS
 .DS_Store
+
+# SSL private key
+*.key
+configs/ssl/*.key

@@ -129,7 +129,7 @@ linux-web-monitoring/
 5. [504 Gateway Timeout](incidents/incident-05-504-gateway-timeout/)
 6. [Disk Full](incidents/incident-06-disk-full/)
 7. [Zabbix Disk Space Monitoring](incidents/incident-07-zabbix-disk-monitoring/)
-8. [Zabbix SSL Certificate Monitoring](incidents/incident-08-zabbix-ssl-expiry/)
+8. [Zabbix SSL Certificate Monitoring](incidents/incident-08-ssl-certificate-monitoring/)
 
 ---
 
@@ -157,4 +157,4 @@ ZabbixでRESOLVEDを確認
 
 ## Status
 
-**Completed**
+**Work in Progress**
