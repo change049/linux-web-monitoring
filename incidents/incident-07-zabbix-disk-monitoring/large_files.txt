@@ -1,0 +1,5 @@
+/var/lib/snapd/snaps/gnome-46-2404_154.snap
+/var/lib/snapd/seed/snaps/gnome-46-2404_154.snap
+/run/media/cao/Ubuntu 26.04 arm64/casper/minimal.squashfs
+/swap.img
+/proc/kcore

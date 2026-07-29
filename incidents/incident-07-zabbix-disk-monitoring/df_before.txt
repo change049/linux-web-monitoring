@@ -1,0 +1,11 @@
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           1.1G  2.6M  1.1G   1% /run
+/dev/nvme0n1p2   19G   15G  2.8G  85% /
+tmpfs           2.7G     0  2.7G   0% /dev/shm
+efivarfs        256K   34K  223K  14% /sys/firmware/efi/efivars
+none            1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+none            1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
+/dev/nvme0n1p1  952M  6.6M  945M   1% /boot/efi
+tmpfs           2.7G   76K  2.7G   1% /tmp
+tmpfs           539M   88K  539M   1% /run/user/1000
+/dev/sr0        3.9G  3.9G     0 100% /run/media/cao/Ubuntu 26.04 arm64

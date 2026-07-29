@@ -1,0 +1,11 @@
+Filesystem      Inodes  IUsed   IFree IUse% Mounted on
+tmpfs           819200   1477  817723    1% /run
+/dev/nvme0n1p2 1250928 263201  987727   22% /
+tmpfs           689200      1  689199    1% /dev/shm
+efivarfs             0      0       0     - /sys/firmware/efi/efivars
+none              1024      1    1023    1% /run/credentials/systemd-journald.service
+none              1024      1    1023    1% /run/credentials/systemd-resolved.service
+/dev/nvme0n1p1       0      0       0     - /boot/efi
+tmpfs          1048576     58 1048518    1% /tmp
+tmpfs           137840    157  137683    1% /run/user/1000
+/dev/sr0             0      0       0     - /run/media/cao/Ubuntu 26.04 arm64
