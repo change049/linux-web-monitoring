@@ -1,5 +1,6 @@
 # Linux Web Server 運用監視プロジェクト
-[![CI](https://github.com/change049/linux-web-monitoring/actions/workflows/ci.yml/badge.svg)](https://github.com/change049/linux-web-monitoring/actions/workflows/ci.yml)
+[![CI](https://github.com/change049/linux-web-monitoring/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/change049/linux-web-monitoring/actions/workflows/ci.yml)
+
 ## 概要
 
 Ubuntu上にNginx Webサーバーを構築し、Shell Script、cron、Zabbixを利用した運用監視環境を構築しました。
