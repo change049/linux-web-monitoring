@@ -1,5 +1,5 @@
 # Linux Web Server 運用監視プロジェクト
-
+[![CI](https://github.com/change049/linux-web-monitoring/actions/workflows/ci.yml/badge.svg)](https://github.com/change049/linux-web-monitoring/actions/workflows/ci.yml)
 ## 概要
 
 Ubuntu上にNginx Webサーバーを構築し、Shell Script、cron、Zabbixを利用した運用監視環境を構築しました。
@@ -8,20 +8,13 @@ Linuxインフラ運用業務を想定し、サーバー監視、自動化、バ
 
 ---
 
-## 主な機能
+## プロジェクトの成果
 
-- Nginx Webサーバー構築
-- ヘルスチェック自動化
-- アクセスログ分析
-- バックアップ自動化
-- サービス自動復旧
-- デプロイ自動化
-- cronによる定期実行
-- Zabbixによるサーバー監視
-- Trigger Actionによるメール通知
-- SSL証明書の有効期限監視
-- 障害シミュレーションおよび復旧確認
-
+- Bashによるヘルスチェック、バックアップ、ログ分析、デプロイ、自動復旧を実装
+- Zabbix Agent 2でNginx、ディスク使用率、SSL証明書を監視
+- Trigger発報からメール通知、復旧、RESOLVEDまでの運用フローを確認
+- NginxおよびLinuxの障害を8種類再現し、原因調査と復旧手順を記録
+- GitHub ActionsでShell ScriptとDocker Composeを自動チェック
 ---
 
 ## システム構成
@@ -38,29 +31,72 @@ Ubuntu Server
     Trigger / Email Alert
 ```
 
----
+## Quick Start
 
-## 実装内容
+### 1. リポジトリを取得
 
-- [x] Nginxインストール
-- [x] カスタムServer Block作成
-- [x] Webページ作成
-- [x] HTTP・HTTPS動作確認
-- [x] UFW設定
-- [x] ヘルスチェックスクリプト
-- [x] アクセスログ分析スクリプト
-- [x] バックアップスクリプト
-- [x] サービス自動復旧スクリプト
-- [x] デプロイスクリプト
-- [x] cronによる定期実行
-- [x] Zabbix Agent 2導入
-- [x] Nginxサービス監視
-- [x] Nginx接続数監視
-- [x] ディスク使用率監視
-- [x] SSL証明書有効期限監視
-- [x] メールアラート設定
-- [x] 障害シミュレーション
-- [x] 障害対応手順書作成
+```bash
+git clone https://github.com/change049/linux-web-monitoring.git
+cd linux-web-monitoring
+```
+
+### 2. Shell Scriptを実行
+
+```bash
+chmod +x scripts/*.sh
+
+sudo ./scripts/health_check.sh
+sudo ./scripts/backup.sh
+sudo ./scripts/deploy.sh
+```
+
+ログ分析：
+
+```bash
+sudo ./scripts/log_analysis.sh
+```
+
+cron設定：
+
+```bash
+./scripts/setup_cron.sh
+```
+
+### 3. Zabbix監視環境を起動
+
+```bash
+cd configs/docker
+cp .env.example .env
+docker compose up -d
+docker compose ps
+```
+
+Zabbix Web：
+
+```text
+http://localhost:8080
+```
+
+Zabbix Agent 2では、以下のUserParameterを使用します。
+
+```text
+nginx.status
+nginx.active.connections
+```
+
+詳細設定：
+
+* [Zabbix構築・監視設定](docs/zabbix/README.md)
+
+### 4. 障害シミュレーション
+
+Nginx、ポート、権限、PHP-FPM、ディスク容量、SSL証明書などの障害を再現し、原因調査と復旧確認を行います。
+
+各手順：
+
+* [Incident Simulation](#incident-simulation)
+
+> 障害シミュレーションは検証用環境で実施してください。
 
 ---
 
@@ -74,7 +110,7 @@ linux-web-monitoring/
 │   └── zabbix-agent2/
 ├── cron/
 ├── docs/
-│   └── zabbix/
+│   
 ├── incidents/
 ├── scripts/
 │   ├── health_check.sh

@@ -1,0 +1,37 @@
+zabbix_export:
+  version: '7.4'
+  host_groups:
+    - uuid: dc579cd7a1a34222933f24f52a68bcd8
+      name: 'Linux servers'
+  hosts:
+    - host: ubuntu-monitor
+      name: ubuntu-monitor
+      templates:
+        - name: 'Linux by Zabbix agent'
+      groups:
+        - name: 'Linux servers'
+      interfaces:
+        - ip: 192.168.1.100
+          interface_ref: if1
+      items:
+        - name: 'Nginx active connections'
+          key: nginx.active.connections
+          delay: 30s
+          interface_ref: if1
+        - name: 'nginx server'
+          key: nginx.status
+          delay: 30s
+          interface_ref: if1
+          triggers:
+            - expression: last(/ubuntu-monitor/nginx.status)=0
+              name: 'Nginx is down'
+              priority: HIGH
+      macros:
+        - macro: '{$CERT.EXPIRY.WARN}'
+          value: '7'
+        - macro: '{$CERT.WEBSITE.HOSTNAME}'
+          value: myapp.local
+          description: 'The website''s DNS name used for the connection.'
+        - macro: '{$CERT.WEBSITE.IP}'
+          value: 127.0.0.1
+          description: 'The website''s IP address used for the connection.'
