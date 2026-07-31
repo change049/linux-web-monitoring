@@ -128,7 +128,7 @@ Filesystem   Type  Size  Used  Avail  Use%  Mounted on
 
 ### スクリーンショット
 
-![ディスク容量不足の調査と復旧](screenshots/01-disk-full-investigation-and-recovery.png)
+![Disk Full Investigation and Recovery](screenshots/01-disk-full-investigation-and-recovery.png)
 
 ---
 

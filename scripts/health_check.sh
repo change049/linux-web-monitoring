@@ -1,8 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
-LOGFILE="/home/cao/linux-web-monitoring/logs/health_check.log"
-EMAIL="example@example.com"
+LOGFILE="${LOG_FILE:-$PROJECT_DIR/logs/health_check.log}"
+EMAIL="${ALERT_EMAIL:-}"
 
 mkdir -p "$(dirname "$LOGFILE")"
 

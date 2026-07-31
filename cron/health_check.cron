@@ -1,1 +1,2 @@
-*/5 * * * * /home/cao/linux-web-monitoring/scripts/health_check.sh
+# Replace <PROJECT_DIR> with your local project path
+*/5 * * * * <PROJECT_DIR>/scripts/health_check.sh

@@ -24,7 +24,7 @@ Job for nginx.service failed because the control process exited with error code.
 
 ### 発生時の画面
 
-![Nginx start failed](../screenshots/01_port_conflict_start_failed.png)
+![Nginx start failed](screenshots/01-start-failed.png)
 
 ## 3. 切り分け手順
 
@@ -112,7 +112,7 @@ HTTP/1.1 200 OK
 
 ### 復旧後の画面
 
-![HTTP 200 after recovery](../screenshots/01_port_conflict_recovered.png)
+![HTTP 200 after recovery](screenshots/02-recovered.png)
 
 ## 7. 再発防止
 

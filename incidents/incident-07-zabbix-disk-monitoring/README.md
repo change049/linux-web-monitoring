@@ -54,10 +54,15 @@ sudo resize2fs /dev/nvme0n2p2
 
 ## スクリーンショット
 
-- Latest Data
-- Trigger (PROBLEM)
-- Trigger (RESOLVED)
+![Latest Data Before](screenshots/lastdata.png)
 
+![Trigger Configuration](screenshots/trigger.png)
+
+![Disk Space Problem](screenshots/problem.png)
+
+![Problem After](screenshots/04-problem-after.png)
+
+![Latest Data After](screenshots/05-latest-data-after.png)
 ---
 
 ## 習得した技術

@@ -101,32 +101,24 @@ Nginx、ポート、権限、PHP-FPM、ディスク容量、SSL証明書など�
 
 ---
 
-## ディレクトリ構成
+## 主なディレクトリ構成
 
 ```text
 linux-web-monitoring/
 ├── configs/
 │   ├── docker/
 │   ├── nginx/
+│   ├── ssl/
 │   └── zabbix-agent2/
 ├── cron/
 ├── docs/
-│   
+│   └── zabbix/
 ├── incidents/
 ├── scripts/
-│   ├── health_check.sh
-│   ├── log_analysis.sh
-│   ├── backup.sh
-│   ├── auto_recover.sh
-│   ├── deploy.sh
-│   ├── check_nginx.sh
-│   ├── check_nginx_active.sh
-│   └── setup_cron.sh
 ├── screenshots/
 ├── web/
 └── README.md
 ```
-
 ---
 
 ## 使用技術
@@ -166,7 +158,7 @@ linux-web-monitoring/
 5. [504 Gateway Timeout](incidents/incident-05-504-gateway-timeout/)
 6. [Disk Full](incidents/incident-06-disk-full/)
 7. [Zabbix Disk Space Monitoring](incidents/incident-07-zabbix-disk-monitoring/)
-8. [Zabbix SSL Certificate Monitoring](incidents/incident-08-ssl-certificate-monitoring/)
+8. [SSL Certificate Monitoring](incidents/incident-08-ssl-certificate-monitoring/)
 
 ---
 

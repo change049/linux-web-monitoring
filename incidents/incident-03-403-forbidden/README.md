@@ -24,7 +24,7 @@ HTTP/1.1 403 Forbidden
 
 ### 発生時の画面
 
-![403 Forbidden after chmod 700](../screenshots/03_403_forbidden.jpeg)
+![403 Forbidden](screenshots/403-error.png)
 
 ## 3. 切り分け手順
 
@@ -59,9 +59,6 @@ namei -l /var/www/myapp/index.html
             └── index.html
 ```
 
-### ログおよび権限確認の画面
-
-![Permission denied and namei output](../screenshots/03_permission_denied_log.png)
 
 ## 4. 原因
 

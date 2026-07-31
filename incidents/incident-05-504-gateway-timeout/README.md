@@ -34,10 +34,6 @@ Server: nginx/1.28.3 (Ubuntu)
 Content-Type: text/html
 ```
 
-### スクリーンショット
-
-![504 Gateway Time-out](screenshots/01-504-error.png)
-
 ---
 
 ## 3. 確認手順
@@ -91,10 +87,6 @@ top
 
 CPUとメモリに大きな逼迫は確認されなかった。
 
-### スクリーンショット
-
-![ログ・プロセス確認](screenshots/02-investigation.png)
-
 ---
 
 ## 4. 原因
@@ -141,8 +133,9 @@ done
 
 ### スクリーンショット
 
-![復旧確認](screenshots/03-recovered.png)
+![504 Gateway Timeout](screenshots/01-504-error.png)
 
+![Investigation and Recovery](screenshots/02-investigation-and-recovery.png)
 ---
 
 ## 7. 502と504の違い

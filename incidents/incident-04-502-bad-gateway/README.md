@@ -36,7 +36,9 @@ HTTP/1.1 502 Bad Gateway
 
 ### 発生時の画面
 
-![502 Bad Gateway](../screenshots/04_502_bad_gateway.png)
+![502 Bad Gateway](screenshots/01-502-error.png)
+
+![Recovery Process](screenshots/02-recovery-process.png)
 
 ## 4. 切り分け手順
 

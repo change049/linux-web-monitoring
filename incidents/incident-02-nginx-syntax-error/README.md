@@ -25,7 +25,7 @@ nginx: configuration file /etc/nginx/nginx.conf test failed
 
 ### 発生時の画面
 
-![Nginx syntax error](../screenshots/02_nginx_syntax_error.jpeg)
+![Nginx syntax error and recovery](screenshots/01-syntax-error-and-recovered.png)
 
 ## 3. エラーの読み方
 
